@@ -1,0 +1,668 @@
+@charset "utf-8";
+
+@font-face {
+    src: url(/font/NotoSansCJKkr-Regular.otf);
+    font-family: 'NotoSansCJKkr-Regular';
+    font-style: normal;
+}
+
+
+/* animation */
+@-webkit-keyframes start-flicker {
+    0% {background-color: rgba(0, 135, 245, 0.9);}
+    50% {background-color: rgba(0, 135, 245, 0.6);}
+    100% {background-color: rgba(0, 135, 245, 0.9);}
+}
+@keyframes start-flicker {
+    0% {background-color: rgba(0, 135, 245, 0.9);}
+    50% {background-color: rgba(0, 135, 245, 0.6);}
+    100% {background-color: rgba(0, 135, 245, 0.9);}
+}
+@-webkit-keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@-webkit-keyframes fade-out {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+@keyframes fade-out {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+@-webkit-keyframes going-up {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-10px);}
+}
+@keyframes going-up {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-10px);}
+}
+@-webkit-keyframes going-down {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(10px);}
+}
+@keyframes going-down {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(10px);}
+}
+@-webkit-keyframes going-left {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-10px);}
+}
+@keyframes going-left {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-10px);}
+}
+@-webkit-keyframes working {
+    0% {width: 0%;}
+    50% {width: 40%;}
+    100% {width: 100%;}
+}
+@keyframes working {
+    0% {width: 0%;}
+    50% {width: 40%;}
+    100% {width: 100%;}
+}
+
+_::-webkit-full-page-media, _:future, :root .safari_only {
+    prop:val; 
+  }
+/* animation class */
+.fade-out-5-4 {
+    animation: fade-out 0.5s 0.4s;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-image: url('/img/사각형\ 5.png');
+    background-image: -moz-linear-gradient(url('/img/사각형\ 5.png')); /* FF3.6-15 */
+    background-image: -webkit-linear-gradient(url('/img/사각형\ 5.png')); /* Chrome10-25,Safari5.1-6 */
+    background-image: linear-gradient(url('/img/사각형\ 5.png')); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+#wrap {
+    margin: 0;
+    position: absolute;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+}
+
+.container {
+    
+    position: absolute; /* 유튜브에서 본 방법 */
+    left: 50%;
+    width: 375px;
+    margin-left: -187.5px; /*이만큼의 마진을 처리 해줘야 중간값으로 앱솔로트 설정이 가능*/
+    height: 600px;
+    animation: fade-in 0.5s ease-out 0.3s both, 
+            going-down 0.5s ease-out 0.3s both;
+}
+.blankbox {
+    width: 375px;
+    height: 0px;
+    margin: 0 0 48px;
+    padding: 0px 0 0.0px 0.5px;
+}
+.time1 {
+    position:absolute;
+    width: 20.7%;
+    height: 24px;
+    top: 48px;
+    left: 39.3%;
+    font-family: NotoSansCJKkr;
+    font-size: 18px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.28;
+    letter-spacing: -0.43px;
+    text-align: center;
+    color: #000000;
+}
+.time2 {
+    position: absolute;
+    top: 9.5%;
+    left: 41.3%;
+    width: 16.9%;
+    font-family: NotoSansCJKkr;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: -0.58px;
+    text-align: center;
+    color: #000000;
+}
+.prime-circle {
+    z-index: 3;
+    position: absolute;
+    top: 147.5px;
+    left: 25.6%;
+    width: 190px;
+    height: 190px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.24);
+    border-radius:190px;
+    border: solid 3px #000000;
+    background-color: #ffffff;
+    line-height: 178px;
+    text-align: center;
+    font-size: 90px;
+    font-weight: bold;
+    
+}
+
+.image-l{
+    top: 147.5px;
+    right: 60.9%;
+    position: absolute;
+    width:200px;
+    height: 200px;
+    border-radius: 200px;
+    object-fit: contain;
+    opacity: 0.15;
+    overflow: hidden;
+}
+.image-R{
+    z-index: 2;
+    position: absolute;
+    top: 147.5px;
+    left: 61.2%;
+    width:200px;
+    height: 200px;
+    border-radius: 200px;
+    object-fit: contain;
+    opacity: 0.15;
+    overflow: hidden;
+}
+
+.sub-title {
+    position: absolute;
+    top: 349px;
+    left: 15%;
+    width: 69.7%;
+    height: 41px;
+    font-family: NotoSansCJKkr;
+    font-size: 30px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.27;
+    letter-spacing: -0.72px;
+    text-align: center;
+    color: #000000
+}
+
+.sub-sub-title {
+    position: absolute;
+    top: 410px;
+    left: 50.5px;
+    width: 274px;
+    height: 52px;
+    font-family: NotoSansCJKkr;
+    font-size: 20px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: -0.48px;
+    text-align: center;
+    color: #000000;
+}
+#title-box+div>input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    position: relative;
+    top:524px;
+    left: 6.5px;
+    width: 66.7%;
+    height: 49px;
+    margin-right:2.1%;
+    border-radius: 27px;
+    border: solid 3px #dbdbdb;
+    background-color: #ffffff;
+    font-family: 'NotoSansCJKkr';
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 49px;
+    letter-spacing: -0.43px;
+    text-align: center;
+    color: #000000;
+    animation: fade-in 0.4s ease-out 0.9s both, 
+            going-down 0.4s ease-out 0.9s both;
+}
+.start{
+    position: relative;
+    left: 278px;
+    top: 467px;
+    width: 78px;
+    min-height: 58px;
+    margin-left: 2.1%;
+    border-radius: 27px;
+    border: solid 3px #000000;
+    background-color: #000000;
+    font-family: 'NotoSansCJKkr';
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.43px;
+    text-align: center;
+    color: #ffffff;
+    animation: fade-in 0.5s ease-out 1.4s both, 
+            going-down 0.5s ease-out 1.4s both;
+}
+.warning {
+    position: absolute;
+    top:500px;
+    left: 0px;
+    color: rgb(231, 20, 20, 0.8);
+    font-weight: bold;
+}
+.check-name {
+    display: inline-block;
+    margin: 10px 10%;
+    width: 80%;
+    text-align: center;
+}
+/* qna로 넘어갈 때 display: block; */
+#qna {
+    display: none;
+    opacity: 0;
+}
+.status-bar {
+    margin: 0 10% 20px 10%;
+    width: 80%;
+    height: 10px;
+    border: 3px solid #ddd;
+    border-radius: 20px;
+    background: #fff;
+    animation: fade-in 0.3s ease-in-out;
+}
+.status {
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.70);
+}
+.box {
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    box-shadow: #ddd 0px 0px 10px 5px;
+    border-radius: 20px;
+    background: rgb(252, 252, 252);
+}
+.q {
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    font-size: 27.2px;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    animation: fade-in 0.3s ease-in-out 0.18s forwards;
+    text-align: center;
+    opacity: 0;
+    
+}
+.answer {
+    width: 100%;
+}
+.a {
+    margin: 20px 10% 0 0;
+    padding: 15px;
+    border: none;
+    font-size: 17.6px;
+    font-size: 0.9rem;
+    font-weight: bolder;
+    text-align: left;
+    transition: background-color, color 0.2s linear;
+    opacity: 0;
+    cursor: pointer;
+}
+.a:hover, .a:focus {
+    background: #222;
+    color: #eee;
+}
+.a:last-child {
+    margin-bottom: 60px;
+}
+/* 계산중 화면으로 넘어갈 때 display: block; */
+#calc {
+    display: none;
+    opacity: 0;
+}
+.calc-bar {
+    position: relative;
+    box-sizing: border-box;
+    margin: 30vh 15vw 10px 15vw;
+    width: 70%;
+    height: 9vh;
+    line-height: 9vh;
+    border-radius: 10px;
+    color: #000;
+    font-size: 45px;
+    font-size: 0.5rem;
+    font-weight: light;
+    letter-spacing: 2.2px;
+    text-align: center;
+    animation: fade-in 0.3s ease-out 0s forwards, 
+            going-down 0.3s ease-out 0s forwards;
+    opacity: 0;
+}
+.calc-bar > .calc {
+    position: absolute;
+    top: 0; left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#57a0db+1,e577c4+100 */
+    background: #ccffff; /* Old browsers */
+    background: -moz-linear-gradient(left,  #ccffff 1%, #ffb18f 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #ccffff 1%,#ffb18f 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #ccffff 1%,#ffb18f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffff', endColorstr='#ffb18f',GradientType=1 ); /* IE6-9 */
+    animation: working 5.5s 2s forwards;
+}
+.wait {
+    padding-bottom: 10px;
+    font-size: 64px;
+    font-size: 2rem;
+    font-weight: lighter;
+    text-align: center;
+    animation: fade-in 0.3s ease-out 0.6s forwards, 
+            going-down 0.3s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+/* result로 넘어갈 때 display: block; */
+#result {
+    display: none;
+    min-height: 100vh;
+    opacity: 0;
+}
+#score-box {
+    font-family: NotoSansCJKkr;
+    font-size: 30px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    margin-bottom: 10px;
+    line-height: 1.25;
+    letter-spacing: -1.15px;
+    text-align: center;
+    color: #000000;
+}
+#score-box > .title {  /*title*/
+    animation: fade-in 0.6s ease-out 0.4s forwards, 
+            going-down 0.6s ease-out 0.4s forwards;
+    opacity: 0;
+}
+ 
+
+
+.score-bar {
+    margin: 0 5%;
+    width: 90%;
+    height: 50px;
+    border-radius: 50px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#6fb7e8+0,855299+50,af3838+100 */
+    background: #6fb7e8; /* Old browsers */
+    background: -moz-linear-gradient(left,  #6fb7e8 0%, #855299 50%, #af3838 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #6fb7e8 0%,#855299 50%,#af3838 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #6fb7e8 0%,#855299 50%,#af3838 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6fb7e8', endColorstr='#af3838',GradientType=1 ); /* IE6-9 */
+    animation: fade-in 0.5s ease-out 2.5s forwards, 
+            going-down 0.5s ease-out 2.5s forwards;
+    opacity: 0;
+}
+#artimage{
+
+}
+.art {
+    position: relative;
+    padding-left: 22.5px;
+    width: 360px;
+    height:640px;
+    right:20px;
+    animation: fade-in 0.3s ease-out 1.5s both, 
+            going-down 0.3s ease-out 1.5s both;
+    opacity: 0;
+margin-bottom: 30px;
+}
+.desc {
+    text-align: center;
+    margin: 30px 7.5% 50px 7.5%;
+    width: 85%;
+    line-height: 28.8px;
+    line-height: 1.8rem;
+    border-radius: 15px;
+    margin-left: 0;
+    font-size: 17.6px;
+    font-weight: 350;
+    padding: 20px 20px 20px 30px;
+    line-height: 30px;
+    
+}
+hr {
+    margin: 20px 0 10px 0;
+    border: 1.5px dashed #222;
+}
+.sharetext{
+    font-weight: bold;
+    text-align: center;
+
+}
+#desc-box ~ p {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 24px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}   
+#share-box {
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin: 25px 10% 30px 10%;
+    padding: 10px;
+    width: 80%;
+    height: 50px;
+    border-radius: 40px;
+    background: #ffffff;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.24);
+}
+#share-box span {
+    display: inline-block;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-size: cover;
+    cursor: pointer;
+}
+.tw {
+    background-image: url('../img/tw.svg');
+    /* 
+    자료 출처
+    http://www.vectorico.com/twitter-logo-white-on-blue/
+    */
+}
+.fb {
+    background-image: url('../img/fb.svg');
+    /* 
+    자료 출처
+    https://commons.wikimedia.org/wiki/File:Facebook_f_logo_(2019).svg
+    */
+}
+.nv {
+    background-image: url('../img/naver.png');
+    /*
+    자료 출처
+    https://www.facebook.com/184030231730640/photos/1175959155871071/
+    */
+}
+.band {
+    background-image: url('../img/band.png');
+    /*
+    자료 출처
+    https://upload.wikimedia.org/wikipedia/commons/3/30/2._BAND_Icon.png
+    */
+}
+.kakao{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.kakaotalk{
+    background-image: url('../img/kakao.png');
+}
+
+#intro-box {
+    padding-top: 50px;
+}
+.caution {
+    padding: 20px 7.5%;
+}
+.caution > p {
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-weight: 400;
+}
+.caution > p > a {
+    color: rgba(94, 134, 255, 0.8);
+    font-weight: bolder;
+    transition: color 0.2s linear;
+}
+.caution > p > a:hover {
+    color: rgba(94, 134, 255, 1.0);
+}
+.hash {
+    color: rgba(0, 135, 245);
+    font-weight: bold;
+}
+.go-origin {
+    margin: 30px 10% 0 10%;
+    width: 80%;
+}
+.btn {
+    box-sizing: border-box;
+    margin: 25px 10% 30px 10%;
+    padding: 10px;
+    width: 80%;
+    height: 50px;
+    border-radius: 40px;
+    background: #ffffff;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.24);
+    transition: background-color 0.2s ease-in-out;
+}
+.btn:hover {
+    background: #000000;
+    color: #fff;
+}
+#gotopage{
+    font-weight: bold;
+}
+.caloric{
+    border: 0.1px;
+    margin-left:32.5px;
+    box-sizing: border-box;
+    background-size: 300px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 10px;
+    color: #fff;
+    width: 300px;
+    height: 90px;
+    border-radius: 20px;
+    background-image: url('../img/calwhite.png');
+    box-shadow: 6px 6px 6px 0 rgba(0.0, 0.0, 0.33, 0.33);
+    transition: background-color 0.2s ease-in-out;
+    margin-bottom: 20px;
+}
+.avocado{
+    border: 0.1px;
+    box-sizing: border-box;
+    margin-left:32.5px;
+    background-size: 300px;
+    width: 300px;
+    height: 90px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 10px;
+    color: #fff;
+    
+    border-radius: 20px;
+    background-image: url('../img/avowhite.png');
+    box-shadow: 6px 6px 6px 0 rgba(0.0, 0.0, 0.33, 0.33);
+    transition: background-color 0.2s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.caloric:hover {
+    
+    background-image: url('../img/calblack.png');
+}
+.avocado:hover{
+    background-image: url('../img/avoblack.png');
+}
+.bottomblank{
+    width: 100%;
+    height:50px;
+}
+
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+
+    .prime-circle {
+        z-index: 3;
+        position: absolute;
+        top: 147.5px;
+        left: 25.6%;
+        width: 190px;
+        height: 190px;
+        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.24);
+        border-radius:190px;
+        border: solid 3px #000000;
+        background-color: #ffffff;
+        line-height: 195px;
+        text-align: center;
+        font-size: 90px;
+        font-weight: bold;
+        
+    }
+    .start{
+        position: relative;
+        left: 278px;
+        top: 458px;
+        width: 78px;
+        min-height: 62px;
+        margin-left: 2.1%;
+        border-radius: 27px;
+        border: solid 3px #000000;
+        background-color: #000000;
+        font-family: 'NotoSansCJKkr';
+        font-size: 18px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: -0.43px;
+        text-align: center;
+        color: #ffffff;
+        animation: fade-in 0.5s ease-out 1.4s both, 
+                going-down 0.5s ease-out 1.4s both;
+    }
+    
+}}
+

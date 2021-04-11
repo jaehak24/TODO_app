@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+    <head>
+        <meta charset="utf-8">
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="Jaehak Lee">
+
+        <meta name="keywords" content="심리테스트, 다이어트, 다이어트 식단 테스트, 연예인 식단, 다이어트식단, 칼로릭, caloric, 식단테스트, 다이어트 테스트, 연예인 테스트">
+        <meta name="description" content="연예인 식단 테스트">
+        
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="내 다이어트 습관으로 알아보는 나한테 맞는 연예인 식단">
+        <meta property="og:description" content="나는 어떤 연예인의  다이어트 식단을 하는게 좋을까?">
+        <meta property="og:image" content="img/shareimage.PNG">
+        <meta property="og:url" content="http://caloric-test.xyz/">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></Script>
+        
+        <link rel="shortcut icon" type="text/css" href="img/cal_feavicon.png">
+        <link rel="appel-touch-icon-precomposed" href="img/cal_feavicon.png">
+        <link href="https://www.google.com/get/noto/#sans-kore" rel="stylesheet">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VKM3DNZJ22"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-VKM3DNZJ22');
+        </script>
+        <title>
+            연예인 식단 테스트
+        </title>
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+            </header>
+            <section id="welcome" class="container">
+                <div id="title-box">
+                    <div class="time1">소요시간</div>
+                    <h1 class="time2">3min</h1>
+                    <div class ="prime-circle">?</div>
+                    <h1>
+                    <img src="img/설현.png" class="image-l">
+                    <img src="img/아이유 1x.png" class="image-R">
+                    </h1>
+
+                    <h2 class="sub-title">연예인 식단 테스트</h2>
+                    <h2 class="sub-sub-title">내 다이어트 습관으로 알아보는 <br>나한테 맞는 연예인 식단</h3>
+                </div>
+                <div >
+                    <input type="text" placeholder="이름을 입력해주세요"> 
+                </div>
+                <p class="check-name warning">
+                    
+                </p>    
+                <div class="start-wrap">
+                    <button class="start">시작</button>
+                </div>
+            </section>
+
+            <section id="qna" class="container">
+                <div class="status-bar">
+                    <div class="status"></div>
+                </div>
+                <div class="q box">
+                    
+                </div>
+                <div class="answer">
+                    
+                </div>
+            </section>
+            <section id="calc">
+                <div class="calc-bar">
+                    당신에게 가장 알맞는 식단을 찾고있어요...
+                    <div class="calc"></div>
+                </div>
+            </section>
+            <section id="result" class="container">
+                <div id="score-box">
+                    <div class="title">                        
+                    </div>
+                </div>
+                <div id="desc">
+                    <div class='art'></div>
+                    
+                </div>
+                <div class="sharetext">친구들과 공유하기</div>
+                <div id="share-box">
+                    <a onclick=javascript:tw() target="_blank" alt="Share on Twitter" title="트위터에 공유하기">
+                        <span class="tw"></span>
+                    </a>
+                    <a onclick=javascript:fb() target="_blank" alt="Share on Facebook" title="페이스북에 공유하기">
+                        <span class="fb"></span>
+                    </a>
+                    <a onclick=javascript:nv() target="_blank" alt="Share on Naver" title="네이버에 공유하기">
+                        <span class="nv"></span>
+                    </a>
+                    <a onclick=javascript:band() target="_blank" alt="Share on Naver Band" title="네이버 밴드에 공유하기">
+                        <span class="band"></span>
+                    </a>
+                    <a href="javascript:sendLinkKakao();" title="카카오톡으로 공유">
+                        <span class="kakao"><img src="../img/kakao.png" width=36 alt="Share on Kakaotalk" class="kakao" ></span>
+                    </a>
+                </div>
+                <button onclick=copy() class="btn">
+                    <strong>링크 복사하기</strong>
+                </button>
+                <div id="gotopage">
+                    <button class="caloric" onclick=javascript:caloric() target="_blank" alt="칼로릭으로 이동" title="칼로릭 페이지로 이동">
+                    </button>
+                </div>
+                <div di="gotopage">
+                    <button class="avocado" onclick=javascript:abocado() target="_blank" alt="아보카도로 이동" title="아보카도 페이지로 이동">
+                    </button>    
+                </div>
+
+                <div class="bottomblank"></div>
+                
+            </section>
+        </div>
+    </body>
+    
+
+    <!--[if lt IE 11]
+        <script src="js/data_es5.js"></script>
+        <script src="js/main_es5.js"></script>
+        <script src="js/share_es5.js"></script>
+    <![endif]-->
+    <!--[If gte IE 11]><!-->
+        <script src="js/data.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/share.js"></script>
+    <!--<![endif]-->
+   <script>
+       Kakao.init('7486bee0d6652c81ee5806739c90b19a');
+    function sendLinkKakao(){
+    Kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+            title: ' 연예인 식단 테스트 ',
+            description: ' #심리테스트 #다이어트 #다이어트_식단_테스트 #연예인 식단 #다이어트식단',
+            imageUrl: '../img/shareimage.PNG',
+            link: {
+                mobileWebUrl: 'https://caloric-test.xyz',
+                webUrl: 'https://caloric-test.xyz'
+            
+            },
+        
+      },
+      social: {
+    },
+      buttons: [       
+        {
+          title: '링크 열기',
+          link: {
+            mobileWebUrl: 'https://caloric-test.xyz',
+            webUrl: 'https://caloric-test.xyz'
+          },
+        },
+      ]
+    }); 
+}
+   </script>
+</html>
